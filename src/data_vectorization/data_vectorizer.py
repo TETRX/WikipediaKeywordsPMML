@@ -10,7 +10,7 @@ class DataVectorizer:
         partial_results=[]
 
         for v in self.partial_vectorizers:
-            partial_results.append(v.vectiorize(path_to_json))
+            partial_results.append(v.vectorize(path_to_json))
         
         file=open(path_to_json,"r") 
         text=json.load(file)["text"]

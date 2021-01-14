@@ -12,8 +12,9 @@ class FirstOccVectorizer:
         result={}
         curr_pos=0
         for word in words:
+            curr_pos+=1
             if not word in result:
-                result[word]=curr_pos/len(words)
+                result[word]=[curr_pos/len(words)]
         return result
         
 

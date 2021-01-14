@@ -21,7 +21,7 @@ class InPartsVectorizer:
         for word in words:
             results[word]=[0,0,0]
 
-        for i in len(parts):
+        for i in range(len(parts)):
             part_words=self.word_getter.get(parts[i])
             for word in part_words:
                 if word in results:

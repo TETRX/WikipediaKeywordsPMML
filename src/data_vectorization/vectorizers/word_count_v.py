@@ -11,11 +11,14 @@ class WordCountVectorizer:
         file=open(path_to_json,"r") 
         text=json.load(file)["text"]
         
-        self.word_counter.count(text)
+        self.word_counter.count_words_in(text)
         words=self.word_counter.word_doc_counter.keys()
         result={}
         all_words_count=self.corpora_data["all words"]
         for word in words:
+            in_corpora_count=0
+            if word in self.corpora_data.keys():
+                in_corpora_count=self.corpora_data[word]["occurence_count"]
             result[word]=[((self.word_counter.word_occurence_counter[word]+1)/(self.word_counter.all_word_counter+1))
-            /((self.corpora_data[word]["occurence_count"]+1)/(all_words_count+1))]
+            /((in_corpora_count+1)/(all_words_count+1))]
         return result
