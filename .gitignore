@@ -1,4 +1,5 @@
-data/corpora
+data/corpora/*
 
 __pycache__
 playground
+results/*
