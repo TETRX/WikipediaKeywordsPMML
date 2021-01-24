@@ -21,7 +21,7 @@ from datetime import datetime
 
 print("Start: ",datetime.now())
 clf=GridSearchCV(estimator=SVC(class_weight=weight),
-param_grid={"kernel":['poly'], "C":[0.1,1.0,100.0], "degree": [2,3,4]}, 
+param_grid={"kernel":['sigmoid'], "C":[0.1,1.0,100.0], "gamma": ["scale",1.0,0.1]}, 
 scoring="balanced_accuracy" ,n_jobs=-1, cv=StratifiedKFold(10,shuffle=True), verbose=4)
 
 
